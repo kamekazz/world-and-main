@@ -6,6 +6,7 @@ import {
   TouchableOpacity,
   Platform,
   StatusBar,
+  ScrollView,
   Image
 } from "react-native";
 import { Container, Content, Icon, Input, Card, CardItem } from "native-base";
@@ -149,6 +150,49 @@ class HomeCom extends Component {
                 uri: "http://cranbury.worldandmain.com/img/items/125030_1.jpg"
               }}
               rating={3}
+            />
+          </Card>
+
+          <Card
+            style={{
+              marginLeft: 5,
+              marginRight: 5,
+              alignItems: "center",
+              paddingBottom: 12
+            }}
+          >
+            <CardItem
+              header
+              style={{
+                borderBottomWidth: 1,
+                borderBottomColor: "#dee0e2",
+                width: "100%"
+              }}
+            >
+              <Text>Special Offers & Events</Text>
+            </CardItem>
+
+            <Image
+              style={{
+                width: "100%",
+                resizeMode: "contain"
+              }}
+              source={{
+                uri:
+                  "http://cranbury.worldandmain.com/img/banner/CZ-right-promo-box-seasonal-1.jpg"
+              }}
+            />
+
+            <Image
+              style={{
+                height: 225,
+                width: "100%",
+                resizeMode: "contain"
+              }}
+              source={{
+                uri:
+                  "http://cranbury.worldandmain.com/img/banner/CZ-right-promo-box-seasonal-2.jpg"
+              }}
             />
           </Card>
         </Content>
