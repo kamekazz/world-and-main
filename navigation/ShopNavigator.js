@@ -18,7 +18,7 @@ import HomeCom from "../screens/HomeCom";
 
 const defaultNavOptions = {
   headerStyle: {
-    backgroundColor: Platform.OS === "android" ? Colors.primary : ""
+    backgroundColor: Colors.primary
   },
   headerTitleStyle: {
     fontFamily: "open-sans-bold"
@@ -26,7 +26,7 @@ const defaultNavOptions = {
   headerBackTitleStyle: {
     fontFamily: "open-sans"
   },
-  headerTintColor: Platform.OS === "android" ? "white" : Colors.primary
+  headerTintColor: "white"
 };
 
 const ProductsNavigator = createStackNavigator(
@@ -94,7 +94,7 @@ const StartNavigator = createStackNavigator(
     navigationOptions: {
       drawerIcon: drawerConfig => (
         <Ionicons
-          name={Platform.OS === "android" ? "md-cart" : "ios-cart"}
+          name={Platform.OS === "android" ? "md-home" : "ios-home"}
           size={23}
           color={drawerConfig.tintColor}
         />

@@ -8,73 +8,21 @@ import {
   StatusBar,
   Image
 } from "react-native";
-import {
-  Container,
-  Content,
-  Header,
-  Left,
-  Right,
-  Icon,
-  Item,
-  Input,
-  Card,
-  CardItem
-} from "native-base";
+import { Container, Content, Icon, Input, Card, CardItem } from "native-base";
 import Colors from "../constants/Colors";
-import FAIcon from "react-native-vector-icons/FontAwesome";
-import MCIcon from "@expo/vector-icons/MaterialCommunityIcons";
 import Swiper from "react-native-swiper";
 import RecommendedCardItem from "../components/RecommendedCardItem";
+import { FontAwesome } from "@expo/vector-icons";
+import { HeaderButtons, Item } from "react-navigation-header-buttons";
+import HeaderButton from "../components/UI/HeaderButton";
 
 class HomeCom extends Component {
   render() {
     return (
       <Container>
-        <Header
-          style={[
-            {
-              backgroundColor: Colors.primary,
-              height: 90,
-              borderBottomColor: "#757575"
-            },
-            styles.androidHeader
-          ]}
-        >
-          <Left style={{ flexDirection: "row" }}>
-            <Icon name="md-menu" style={{ color: "white", marginRight: 15 }} />
-            <MCIcon name="earth" style={{ fontSize: 32, color: "white" }} />
-          </Left>
-          <Right>
-            <Icon name="md-cart" style={{ color: "white" }} />
-          </Right>
-        </Header>
-        <View
-          style={{
-            position: "absolute",
-            left: 0,
-            right: 0,
-            top: 90,
-            height: 70,
-            backgroundColor: Colors.primary,
-            flexDirection: "row",
-            alignItems: "center",
-            paddingHorizontal: 5
-          }}
-        >
+        <View style={styles.searchBarRow}>
           <TouchableOpacity>
-            <View
-              style={{
-                width: 100,
-                backgroundColor: Colors.accent,
-                height: 50,
-                borderRadius: 4,
-                padding: 7,
-                alignItems: "flex-start",
-                justifyContent: "center",
-                borderColor: "white",
-                borderWidth: 3
-              }}
-            >
+            <View style={styles.categoryButton}>
               <Text style={{ fontSize: 12, color: "white" }}>Shop by</Text>
               <Text style={{ fontWeight: "bold", color: "white" }}>
                 Category
@@ -82,44 +30,23 @@ class HomeCom extends Component {
             </View>
           </TouchableOpacity>
 
-          <View
-            style={{
-              flex: 1,
-              height: "100%",
-              marginLeft: 5,
-              justifyContent: "center"
-            }}
-          >
-            <Item
-              style={{
-                backgroundColor: "white",
-                paddingHorizontal: 10,
-                borderRadius: 4
-              }}
-            >
+          <View style={styles.searchBarItem}>
+            <View style={styles.searchBar}>
               <Icon name="search" style={{ fontSize: 20, paddingTop: 5 }} />
               <Input placeholder="Search" />
-            </Item>
+            </View>
           </View>
         </View>
 
-        <Content style={{ backgroundColor: "#d5d5d6", marginTop: 70 }}>
-          <View
-            style={{
-              height: 50,
-              backgroundColor: "white",
-              flexDirection: "row",
-              paddingHorizontal: 5,
-              alignItems: "center",
-              justifyContent: "space-between"
-            }}
-          >
+        <Content style={{ backgroundColor: "#d5d5d6" }}>
+          <View style={styles.gridedCard}>
             <Text>Hello, Varun Nath</Text>
-            <View style={{ flexDirection: "row" }}>
-              <Text>Your Account </Text>
-              <Icon name="arrow-forward" style={{ fontSize: 18 }} />
+            <View style={{ flexDirection: "row", alignItems: "center" }}>
+              <Text style={{ color: Colors.accent }}>Your Account </Text>
+              <FontAwesome name="chevron-right" color={Colors.accent} />
             </View>
           </View>
+
           <Swiper autoplay={true} style={{ height: 100 }}>
             <View style={{ flex: 1 }}>
               <Image
@@ -193,33 +120,33 @@ class HomeCom extends Component {
   }
 }
 
-// HomeCom.navigationOptions = navData => {
-//   return {
-//     headerTitle: "All Products",
-//     headerLeft: (
-//       <HeaderButtons HeaderButtonComponent={HeaderButton}>
-//         <Item
-//           title="Menu"
-//           iconName={Platform.OS === "android" ? "md-menu" : "ios-menu"}
-//           onPress={() => {
-//             navData.navigation.toggleDrawer();
-//           }}
-//         />
-//       </HeaderButtons>
-//     ),
-//     headerRight: (
-//       <HeaderButtons HeaderButtonComponent={HeaderButton}>
-//         <Item
-//           title="Cart"
-//           iconName={Platform.OS === "android" ? "md-cart" : "ios-cart"}
-//           onPress={() => {
-//             navData.navigation.navigate("Cart");
-//           }}
-//         />
-//       </HeaderButtons>
-//     )
-//   };
-// };
+HomeCom.navigationOptions = navData => {
+  return {
+    headerTitle: "Dashboard",
+    headerLeft: (
+      <HeaderButtons HeaderButtonComponent={HeaderButton}>
+        <Item
+          title="Menu"
+          iconName={Platform.OS === "android" ? "md-menu" : "ios-menu"}
+          onPress={() => {
+            navData.navigation.toggleDrawer();
+          }}
+        />
+      </HeaderButtons>
+    ),
+    headerRight: (
+      <HeaderButtons HeaderButtonComponent={HeaderButton}>
+        <Item
+          title="Cart"
+          iconName={Platform.OS === "android" ? "md-cart" : "ios-cart"}
+          onPress={() => {
+            navData.navigation.navigate("Cart");
+          }}
+        />
+      </HeaderButtons>
+    )
+  };
+};
 
 export default HomeCom;
 
@@ -235,5 +162,46 @@ const styles = StyleSheet.create({
         paddingTop: StatusBar.currentHeight
       }
     })
+  },
+  searchBarRow: {
+    backgroundColor: Colors.primary,
+    flexDirection: "row",
+    alignItems: "center",
+    // borderColor: "red",
+    // borderWidth: 3,
+    height: 53
+  },
+  categoryButton: {
+    width: 100,
+    backgroundColor: Colors.accent,
+    height: 50,
+    borderRadius: 4,
+    padding: 7,
+    alignItems: "flex-start",
+    justifyContent: "center",
+    borderColor: "white",
+    borderWidth: 3
+  },
+  searchBarItem: {
+    flex: 1,
+    height: "100%",
+    marginLeft: 5,
+    justifyContent: "center"
+  },
+  searchBar: {
+    backgroundColor: "white",
+    paddingHorizontal: 10,
+    borderRadius: 4,
+    height: 50,
+    flexDirection: "row",
+    alignItems: "center"
+  },
+  gridedCard: {
+    height: 50,
+    backgroundColor: "white",
+    flexDirection: "row",
+    paddingHorizontal: 5,
+    alignItems: "center",
+    justifyContent: "space-between"
   }
 });
