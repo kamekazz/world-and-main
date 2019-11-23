@@ -40,7 +40,7 @@ class HomeCom extends Component {
 
         <Content style={{ backgroundColor: "#d5d5d6" }}>
           <View style={styles.gridedCard}>
-            <Text>Hello, Varun Nath</Text>
+            <Text>Hello, Robert Iantosca</Text>
             <View style={{ flexDirection: "row", alignItems: "center" }}>
               <Text style={{ color: Colors.accent }}>Your Account </Text>
               <FontAwesome name="chevron-right" color={Colors.accent} />
@@ -54,9 +54,9 @@ class HomeCom extends Component {
                   flex: 1,
                   height: null,
                   width: null,
-                  resizeMode: "contain"
+                  resizeMode: "cover"
                 }}
-                source={require("../assets/swiper_2.jpg")}
+                source={require("../assets/img/Home/main-hompage-comfort-zone1.jpg")}
               />
             </View>
             <View style={{ flex: 1 }}>
@@ -65,52 +65,89 @@ class HomeCom extends Component {
                   flex: 1,
                   height: null,
                   width: null,
-                  resizeMode: "contain"
+                  resizeMode: "cover"
                 }}
-                source={require("../assets/swiper_3.jpg")}
-              />
-            </View>
-            <View style={{ flex: 1 }}>
-              <Image
-                style={{
-                  flex: 1,
-                  height: null,
-                  width: null,
-                  resizeMode: "contain"
-                }}
-                source={require("../assets/swiper_2.jpg")}
+                source={require("../assets/img/Home/main-hompage-wordlock1.jpg")}
               />
             </View>
           </Swiper>
-          <Card style={{ marginLeft: 5, marginRight: 5 }}>
+          <Card
+            style={{
+              marginLeft: 5,
+              marginRight: 5,
+              alignItems: "center",
+              paddingBottom: 12
+            }}
+          >
             <CardItem
               header
-              style={{ borderBottomWidth: 1, borderBottomColor: "#dee0e2" }}
+              style={{
+                borderBottomWidth: 1,
+                borderBottomColor: "#dee0e2",
+                width: "100%"
+              }}
             >
-              <Text>Your Recommendations</Text>
+              <Text>Featured Products</Text>
             </CardItem>
             <RecommendedCardItem
-              itemName="You can heal your life"
-              itemCreator="Louise Hay"
-              itemPrice="$10"
-              savings="2.5"
-              imageUri={require("../assets/recommended_1.jpg")}
+              itemName="HEATER FAN"
+              itemCreator="Comfort Zone"
+              itemPrice="Item #: 125095"
+              savings="UPC: 075877250483"
+              imageUri={{
+                uri: "http://cranbury.worldandmain.com/img/items/125095_1.jpg"
+              }}
               rating={5}
             />
+            <View
+              style={{
+                borderBottomWidth: 1,
+                borderBottomColor: "#dee0e2",
+                width: "85%"
+              }}
+            ></View>
             <RecommendedCardItem
-              itemName="Uncharted 4"
-              itemCreator="Sony"
-              itemPrice="$19.99"
-              savings="17"
-              imageUri={require("../assets/recommended_2.jpg")}
+              itemName="HEATER FAN PERSONAL 1500 WATTS"
+              itemCreator="Comfort Zone"
+              itemPrice="Item #: 125030"
+              savings="UPC: 075877070708"
+              imageUri={{
+                uri: "http://cranbury.worldandmain.com/img/items/125110_1.jpg"
+              }}
               rating={5}
             />
+            <View
+              style={{
+                borderBottomWidth: 1,
+                borderBottomColor: "#dee0e2",
+                width: "85%"
+              }}
+            ></View>
             <RecommendedCardItem
-              itemName="Ea UFC 3"
-              itemCreator="Ea Sports"
-              itemPrice="$44"
-              savings="6"
-              imageUri={require("../assets/recommended_3.jpg")}
+              itemName="HEATER FAN TOWER OSC CERAMIC"
+              itemCreator="Comfort Zone"
+              itemPrice="Item #: 125116"
+              savings="UPC: 075877512161"
+              imageUri={{
+                uri: "http://cranbury.worldandmain.com/img/items/125037_1.jpg"
+              }}
+              rating={3}
+            />
+            <View
+              style={{
+                borderBottomWidth: 1,
+                borderBottomColor: "#dee0e2",
+                width: "85%"
+              }}
+            ></View>
+            <RecommendedCardItem
+              itemName="HEATER OILFIL SLIM RADIATOR"
+              itemCreator="Comfort Zone"
+              itemPrice="Item #: 125002Item"
+              savings="UPC: 075877700728"
+              imageUri={{
+                uri: "http://cranbury.worldandmain.com/img/items/125030_1.jpg"
+              }}
               rating={3}
             />
           </Card>

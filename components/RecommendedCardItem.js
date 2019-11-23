@@ -9,7 +9,7 @@ class RecommendedCardItem extends Component {
       <CardItem>
         <View>
           <Image
-            style={{ height: 90, width: 60 }}
+            style={{ height: 110, width: 90 }}
             source={this.props.imageUri}
           />
         </View>
@@ -28,12 +28,7 @@ class RecommendedCardItem extends Component {
           <Text style={{ fontSize: 14, fontWeight: "bold", color: "#c4402f" }}>
             {this.props.itemPrice}
           </Text>
-          <Text>
-            <Text style={{ color: "grey", fontWeight: "300", fontSize: 11 }}>
-              You save
-            </Text>{" "}
-            ${this.props.savings}
-          </Text>
+          <Text>{this.props.savings}</Text>
 
           <StarRating
             disabled={true}
