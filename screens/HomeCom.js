@@ -6,7 +6,6 @@ import {
   TouchableOpacity,
   Platform,
   StatusBar,
-  ScrollView,
   Image
 } from "react-native";
 import { Container, Content, Icon, Input, Card, CardItem } from "native-base";
@@ -48,7 +47,12 @@ class HomeCom extends Component {
             </View>
           </View>
 
-          <Swiper autoplay={true} style={{ height: 100 }}>
+          <Swiper
+            showsButtons={true}
+            autoplay={true}
+            style={{ height: 150 }}
+            autoplayTimeout={4}
+          >
             <View style={{ flex: 1 }}>
               <Image
                 style={{
@@ -72,6 +76,66 @@ class HomeCom extends Component {
               />
             </View>
           </Swiper>
+
+          <Card
+            style={{
+              marginLeft: 5,
+              marginRight: 5,
+              alignItems: "center",
+              paddingBottom: 12
+            }}
+          >
+            <CardItem
+              header
+              style={{
+                borderBottomWidth: 1,
+                borderBottomColor: "#dee0e2",
+                width: "100%"
+              }}
+            >
+              <Text>My Orders Sautes</Text>
+            </CardItem>
+            <View
+              style={{
+                flexDirection: "row",
+                justifyContent: "space-between",
+                alignItems: "center",
+                paddingTop: 12
+              }}
+            >
+              <Image
+                style={{
+                  height: "100%",
+                  width: "35%",
+                  resizeMode: "contain"
+                }}
+                source={{
+                  uri:
+                    "https://pp.netclipart.com/pp/s/8-85665_shipping-box-svg-clip-arts-600-x-597.png"
+                }}
+              />
+
+              <View
+                style={{
+                  width: "65%"
+                }}
+              >
+                <View>
+                  <Text style={{ color: "#f37924", fontSize: 16 }}>
+                    Delivering Day:
+                  </Text>
+                  <Text style={{ color: Colors.accent, fontSize: 16 }}>
+                    Saturday, November 23, 2019
+                  </Text>
+                </View>
+                <View style={{ flexDirection: "row" }}>
+                  <Text>BOS: </Text>
+                  <Text>45253847</Text>
+                </View>
+              </View>
+            </View>
+          </Card>
+
           <Card
             style={{
               marginLeft: 5,
@@ -171,17 +235,6 @@ class HomeCom extends Component {
             >
               <Text>Special Offers & Events</Text>
             </CardItem>
-
-            <Image
-              style={{
-                width: "100%",
-                resizeMode: "contain"
-              }}
-              source={{
-                uri:
-                  "http://cranbury.worldandmain.com/img/banner/CZ-right-promo-box-seasonal-1.jpg"
-              }}
-            />
 
             <Image
               style={{
