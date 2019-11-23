@@ -5,23 +5,39 @@ import {
   StyleSheet,
   TouchableOpacity,
   Platform,
+  Alert,
   StatusBar,
+  Modal,
   Image
 } from "react-native";
 import { Container, Content, Icon, Input, Card, CardItem } from "native-base";
 import Colors from "../constants/Colors";
 import Swiper from "react-native-swiper";
 import RecommendedCardItem from "../components/RecommendedCardItem";
-import { FontAwesome } from "@expo/vector-icons";
+import { FontAwesome, MaterialCommunityIcons } from "@expo/vector-icons";
+
 import { HeaderButtons, Item } from "react-navigation-header-buttons";
 import HeaderButton from "../components/UI/HeaderButton";
+import Category from "../components/Category";
 
 class HomeCom extends Component {
+  state = {
+    modalVisible: false
+  };
+
+  setModalVisible = visible => {
+    this.setState({ modalVisible: visible });
+  };
+
   render() {
     return (
       <Container>
         <View style={styles.searchBarRow}>
-          <TouchableOpacity>
+          <TouchableOpacity
+            onPress={() => {
+              this.setModalVisible(!this.state.modalVisible);
+            }}
+          >
             <View style={styles.categoryButton}>
               <Text style={{ fontSize: 12, color: "white" }}>Shop by</Text>
               <Text style={{ fontWeight: "bold", color: "white" }}>
@@ -100,21 +116,47 @@ class HomeCom extends Component {
                 flexDirection: "row",
                 justifyContent: "space-between",
                 alignItems: "center",
-                paddingTop: 12
+                paddingTop: 12,
+                height: 90
               }}
             >
-              <Image
+              <View
                 style={{
-                  height: "100%",
-                  width: "35%",
-                  resizeMode: "contain"
+                  width: "35%"
                 }}
-                source={{
-                  uri:
-                    "https://pp.netclipart.com/pp/s/8-85665_shipping-box-svg-clip-arts-600-x-597.png"
-                }}
-              />
-
+              >
+                <Image
+                  style={{
+                    height: "100%",
+                    width: "100%",
+                    resizeMode: "contain"
+                  }}
+                  source={{
+                    uri:
+                      "https://pp.netclipart.com/pp/s/8-85665_shipping-box-svg-clip-arts-600-x-597.png"
+                  }}
+                />
+                <View
+                  style={{
+                    backgroundColor: Colors.primary,
+                    borderRadius: 50,
+                    width: 38,
+                    position: "absolute",
+                    top: "23%",
+                    left: "45%",
+                    transform: [{ scaleX: 1.05 }, { rotateY: "25deg" }],
+                    alignItems: "center",
+                    justifyContent: "center",
+                    opacity: 0.8
+                  }}
+                >
+                  <MaterialCommunityIcons
+                    size={38}
+                    name="earth"
+                    color={Colors.accent}
+                  />
+                </View>
+              </View>
               <View
                 style={{
                   width: "65%"
@@ -249,6 +291,17 @@ class HomeCom extends Component {
             />
           </Card>
         </Content>
+        <Modal
+          animationType="slide"
+          transparent={false}
+          visible={this.state.modalVisible}
+          onRequestClose={() => {
+            Alert.alert("Modal has been closed.");
+            this.setModalVisible(false);
+          }}
+        >
+          <Category setModalVisible={this.setModalVisible} />
+        </Modal>
       </Container>
     );
   }

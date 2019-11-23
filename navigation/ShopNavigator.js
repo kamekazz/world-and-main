@@ -20,12 +20,8 @@ const defaultNavOptions = {
   headerStyle: {
     backgroundColor: Colors.primary
   },
-  headerTitleStyle: {
-    fontFamily: "open-sans-bold"
-  },
-  headerBackTitleStyle: {
-    fontFamily: "open-sans"
-  },
+  headerTitleStyle: {},
+  headerBackTitleStyle: {},
   headerTintColor: "white"
 };
 
