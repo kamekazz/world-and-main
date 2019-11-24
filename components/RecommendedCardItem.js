@@ -1,12 +1,18 @@
 import React, { Component } from "react";
 import { View, Text, StyleSheet, Image } from "react-native";
 
-import { Card, CardItem, Right } from "native-base";
+import { CardItem, Right } from "native-base";
 import StarRating from "react-native-star-rating";
+
 class RecommendedCardItem extends Component {
   render() {
     return (
-      <CardItem>
+      <CardItem
+        button
+        onPress={() => {
+          this.props.navigate("Product");
+        }}
+      >
         <View>
           <Image
             style={{ height: 110, width: 90 }}

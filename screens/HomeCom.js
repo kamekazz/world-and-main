@@ -205,7 +205,9 @@ class HomeCom extends Component {
                 uri: "http://cranbury.worldandmain.com/img/items/125095_1.jpg"
               }}
               rating={5}
+              navigate={this.props.navigation.navigate}
             />
+
             <View
               style={{
                 borderBottomWidth: 1,
@@ -222,7 +224,9 @@ class HomeCom extends Component {
                 uri: "http://cranbury.worldandmain.com/img/items/125110_1.jpg"
               }}
               rating={5}
+              navigate={this.props.navigation.navigate}
             />
+
             <View
               style={{
                 borderBottomWidth: 1,
@@ -239,6 +243,7 @@ class HomeCom extends Component {
                 uri: "http://cranbury.worldandmain.com/img/items/125037_1.jpg"
               }}
               rating={3}
+              navigate={this.props.navigation.navigate}
             />
             <View
               style={{
@@ -256,6 +261,7 @@ class HomeCom extends Component {
                 uri: "http://cranbury.worldandmain.com/img/items/125030_1.jpg"
               }}
               rating={3}
+              navigate={this.props.navigation.navigate}
             />
           </Card>
 

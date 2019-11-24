@@ -15,6 +15,7 @@ import UserProductsScreen from "../screens/user/UserProductsScreen";
 import EditProductScreen from "../screens/user/EditProductScreen";
 import Colors from "../constants/Colors";
 import HomeCom from "../screens/HomeCom";
+import MainProductScreen from "../screens/MainProductScreen";
 
 const defaultNavOptions = {
   headerStyle: {
@@ -84,7 +85,8 @@ const AdminNavigator = createStackNavigator(
 
 const StartNavigator = createStackNavigator(
   {
-    Home: HomeCom
+    // Home: HomeCom,
+    Product: MainProductScreen
   },
   {
     navigationOptions: {

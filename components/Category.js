@@ -17,19 +17,16 @@ import {
 import Colors from "../constants/Colors";
 
 const Category = ({ setModalVisible }) => {
-  const goTo = () => {
+  const goBack = () => {
     setModalVisible(false);
-    console.log("object");
   };
   return (
     <Container>
       <Header style={{ backgroundColor: Colors.primary }}>
         <Left>
-          <TouchableOpacity onPress={() => goTo()}>
-            <Button transparent>
-              <Icon name="arrow-back" />
-            </Button>
-          </TouchableOpacity>
+          <Button transparent onPress={() => goBack()}>
+            <Icon name="arrow-back" />
+          </Button>
         </Left>
         <Body>
           <Title>Category's</Title>
@@ -37,7 +34,7 @@ const Category = ({ setModalVisible }) => {
       </Header>
       <Content>
         <List>
-          <ListItem itemDivider>
+          <ListItem>
             <Text style={styles.mainText}>Fans</Text>
           </ListItem>
           <ListItem>
