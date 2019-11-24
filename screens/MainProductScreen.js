@@ -37,7 +37,7 @@ const ButtonEl = ({}) => {
             fontSize: 20
           }}
         >
-          Order Product
+          Order Product !!
         </Text>
       </View>
     </TouchableOpacity>

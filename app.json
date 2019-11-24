@@ -4,7 +4,11 @@
     "slug": "not-world-and-main",
     "privacy": "public",
     "sdkVersion": "33.0.0",
-    "platforms": ["ios", "android", "web"],
+    "platforms": [
+      "ios",
+      "android",
+      "web"
+    ],
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -14,11 +18,25 @@
       "backgroundColor": "#ffffff"
     },
     "updates": {
-      "fallbackToCacheTimeout": 0
+      "fallbackToCacheTimeout": 2000
     },
-    "assetBundlePatterns": ["**/*"],
+    "assetBundlePatterns": [
+      "**/*"
+    ],
     "ios": {
+      "buildNumber": "1.0.0",
+      "bundleIdentifier": "com.herokuapp.manueltaveras",
       "supportsTablet": true
-    }
+    },
+    "android": {
+      "versionCode": 1,
+      "package": "com.herokuapp.manueltaveras",
+      "permissions": [
+        "VIBRATE",
+        "WAKE_LOCK",
+        "WRITE_EXTERNAL_STORAGE"
+      ]
+    },
+    "description": ""
   }
 }
