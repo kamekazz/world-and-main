@@ -9,7 +9,9 @@ const ResultsDetail = ({ result }) => {
         resizeMode="contain"
         source={{ uri: result.image_url }}
       />
-      <Text style={styles.name}>{result.name}</Text>
+      <Text numberOfLines={2} style={styles.name}>
+        {result.name}
+      </Text>
       <Text style={{ color: "blue" }}>{result.rating}</Text>
     </View>
   );

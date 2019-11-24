@@ -19,14 +19,20 @@ import { FontAwesome, MaterialCommunityIcons } from "@expo/vector-icons";
 import { HeaderButtons, Item } from "react-navigation-header-buttons";
 import HeaderButton from "../components/UI/HeaderButton";
 import Category from "../components/Category";
+import { BarCodeScanner } from "expo-barcode-scanner";
+import Version from "../components/Version";
 
 class HomeCom extends Component {
   state = {
-    modalVisible: false
+    modalVisible: false,
+    modalVisibleVersion: false
   };
 
   setModalVisible = visible => {
     this.setState({ modalVisible: visible });
+  };
+  setModalVisibleVersion = visible => {
+    this.setState({ modalVisibleVersion: visible });
   };
 
   render() {
@@ -52,6 +58,19 @@ class HomeCom extends Component {
               <Input placeholder="Search" />
             </View>
           </View>
+          <TouchableOpacity
+            onPress={() => {
+              this.setModalVisibleVersion(!this.state.modalVisibleVersion);
+            }}
+          >
+            <View style={styles.barCodeButton}>
+              <MaterialCommunityIcons
+                name="barcode-scan"
+                size={16}
+                color="white"
+              />
+            </View>
+          </TouchableOpacity>
         </View>
 
         <Content style={{ backgroundColor: "#d5d5d6" }}>
@@ -306,7 +325,21 @@ class HomeCom extends Component {
             this.setModalVisible(false);
           }}
         >
-          <Category setModalVisible={this.setModalVisible} />
+          <Category
+            setModalVisible={this.setModalVisible}
+            setModalVisibleVersion={this.setModalVisibleVersion}
+          />
+        </Modal>
+        <Modal
+          animationType="slide"
+          transparent={false}
+          visible={this.state.modalVisibleVersion}
+          onRequestClose={() => {
+            Alert.alert("Modal has been closed.");
+            this.setModalVisibleVersion(false);
+          }}
+        >
+          <Version setModalVisibleVersion={this.setModalVisibleVersion} />
         </Modal>
       </Container>
     );
@@ -374,6 +407,16 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     borderColor: "white",
     borderWidth: 3
+  },
+  barCodeButton: {
+    backgroundColor: Colors.accent,
+    height: 50,
+    borderRadius: 4,
+    padding: 7,
+    justifyContent: "center",
+    borderColor: "white",
+    borderWidth: 3,
+    marginLeft: 3
   },
   searchBarItem: {
     flex: 1,

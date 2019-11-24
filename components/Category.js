@@ -16,9 +16,12 @@ import {
 } from "native-base";
 import Colors from "../constants/Colors";
 
-const Category = ({ setModalVisible }) => {
+const Category = ({ setModalVisible, setModalVisibleVersion }) => {
   const goBack = () => {
     setModalVisible(false);
+  };
+  const openModel = () => {
+    setModalVisibleVersion(true);
   };
   return (
     <Container>
@@ -34,10 +37,10 @@ const Category = ({ setModalVisible }) => {
       </Header>
       <Content>
         <List>
-          <ListItem>
+          <ListItem itemDivider>
             <Text style={styles.mainText}>Fans</Text>
           </ListItem>
-          <ListItem>
+          <ListItem button onPress={() => openModel()}>
             <Left>
               <Text>Non-Stand Fans</Text>
             </Left>
@@ -45,7 +48,7 @@ const Category = ({ setModalVisible }) => {
               <Icon name="arrow-forward" />
             </Right>
           </ListItem>
-          <ListItem>
+          <ListItem button onPress={() => openModel()}>
             <Left>
               <Text>Stand Fans</Text>
             </Left>
@@ -59,7 +62,7 @@ const Category = ({ setModalVisible }) => {
             <Text style={styles.mainText}>Appliance Hook-Up</Text>
           </ListItem>
 
-          <ListItem>
+          <ListItem button onPress={() => openModel()}>
             <Left>
               <Text>Clothing Dryer Parts</Text>
             </Left>
@@ -68,7 +71,7 @@ const Category = ({ setModalVisible }) => {
             </Right>
           </ListItem>
 
-          <ListItem>
+          <ListItem button onPress={() => openModel()}>
             <Left>
               <Text>Clothing Washer Parts</Text>
             </Left>
@@ -76,7 +79,7 @@ const Category = ({ setModalVisible }) => {
               <Icon name="arrow-forward" />
             </Right>
           </ListItem>
-          <ListItem>
+          <ListItem button onPress={() => openModel()}>
             <Left>
               <Text>Dishwasher & Disposal</Text>
             </Left>
@@ -84,7 +87,7 @@ const Category = ({ setModalVisible }) => {
               <Icon name="arrow-forward" />
             </Right>
           </ListItem>
-          <ListItem>
+          <ListItem button onPress={() => openModel()}>
             <Left>
               <Text>Drainage</Text>
             </Left>
@@ -92,7 +95,7 @@ const Category = ({ setModalVisible }) => {
               <Icon name="arrow-forward" />
             </Right>
           </ListItem>
-          <ListItem>
+          <ListItem button onPress={() => openModel()}>
             <Left>
               <Text>View More</Text>
             </Left>
@@ -105,7 +108,7 @@ const Category = ({ setModalVisible }) => {
             <Text style={styles.mainText}> Industrial Cleaning</Text>
           </ListItem>
 
-          <ListItem>
+          <ListItem button onPress={() => openModel()}>
             <Left>
               <Text>Automotive Cleaning</Text>
             </Left>
@@ -113,7 +116,7 @@ const Category = ({ setModalVisible }) => {
               <Icon name="arrow-forward" />
             </Right>
           </ListItem>
-          <ListItem>
+          <ListItem button onPress={() => openModel()}>
             <Left>
               <Text>Janitor Items</Text>
             </Left>
@@ -121,7 +124,7 @@ const Category = ({ setModalVisible }) => {
               <Icon name="arrow-forward" />
             </Right>
           </ListItem>
-          <ListItem>
+          <ListItem button onPress={() => openModel()}>
             <Left>
               <Text>Js-Broom Heads</Text>
             </Left>
@@ -134,7 +137,7 @@ const Category = ({ setModalVisible }) => {
             <Text style={styles.mainText}> GENERAL HARDWARE</Text>
           </ListItem>
 
-          <ListItem>
+          <ListItem button onPress={() => openModel()}>
             <Left>
               <Text>Chain & Wire</Text>
             </Left>
@@ -142,7 +145,7 @@ const Category = ({ setModalVisible }) => {
               <Icon name="arrow-forward" />
             </Right>
           </ListItem>
-          <ListItem>
+          <ListItem button onPress={() => openModel()}>
             <Left>
               <Text>Chemicals</Text>
             </Left>
@@ -150,7 +153,7 @@ const Category = ({ setModalVisible }) => {
               <Icon name="arrow-forward" />
             </Right>
           </ListItem>
-          <ListItem>
+          <ListItem button onPress={() => openModel()}>
             <Left>
               <Text>Flooring</Text>
             </Left>
@@ -162,7 +165,7 @@ const Category = ({ setModalVisible }) => {
           <ListItem itemDivider>
             <Text style={styles.mainText}>Hand Tools</Text>
           </ListItem>
-          <ListItem>
+          <ListItem button onPress={() => openModel()}>
             <Left>
               <Text>Bags and Boxes</Text>
             </Left>
@@ -170,7 +173,7 @@ const Category = ({ setModalVisible }) => {
               <Icon name="arrow-forward" />
             </Right>
           </ListItem>
-          <ListItem>
+          <ListItem button onPress={() => openModel()}>
             <Left>
               <Text>Cutting Tools</Text>
             </Left>
@@ -178,7 +181,7 @@ const Category = ({ setModalVisible }) => {
               <Icon name="arrow-forward" />
             </Right>
           </ListItem>
-          <ListItem>
+          <ListItem button onPress={() => openModel()}>
             <Left>
               <Text>Hammers</Text>
             </Left>
@@ -190,7 +193,7 @@ const Category = ({ setModalVisible }) => {
           <ListItem itemDivider>
             <Text style={styles.mainText}>Heaters</Text>
           </ListItem>
-          <ListItem>
+          <ListItem button onPress={() => openModel()}>
             <Left>
               <Text>Ceramic Heater</Text>
             </Left>
@@ -198,7 +201,7 @@ const Category = ({ setModalVisible }) => {
               <Icon name="arrow-forward" />
             </Right>
           </ListItem>
-          <ListItem>
+          <ListItem button onPress={() => openModel()}>
             <Left>
               <Text>Commercial Heaters</Text>
             </Left>
@@ -206,7 +209,7 @@ const Category = ({ setModalVisible }) => {
               <Icon name="arrow-forward" />
             </Right>
           </ListItem>
-          <ListItem>
+          <ListItem button onPress={() => openModel()}>
             <Left>
               <Text>Oil-Filled Heaters</Text>
             </Left>

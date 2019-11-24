@@ -85,7 +85,7 @@ const AdminNavigator = createStackNavigator(
 
 const StartNavigator = createStackNavigator(
   {
-    // Home: HomeCom,
+    Home: HomeCom,
     Product: MainProductScreen
   },
   {
@@ -104,10 +104,7 @@ const StartNavigator = createStackNavigator(
 
 const ShopNavigator = createDrawerNavigator(
   {
-    Dashboard: StartNavigator,
-    Products: ProductsNavigator,
-    Orders: OrdersNavigator,
-    Admin: AdminNavigator
+    Dashboard: StartNavigator
   },
   {
     contentOptions: {
